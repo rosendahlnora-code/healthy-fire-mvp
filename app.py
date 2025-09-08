@@ -93,11 +93,20 @@ def quick_tip(row) -> str:
     return tips[weakest]
 
 
+from PIL import Image
+
+ICON_PATH = "assets/icon.png"
+try:
+    _icon = Image.open(ICON_PATH)
+except Exception:
+    _icon = "🔥"  # fallback if file not found
+
 st.set_page_config(
     page_title="Healthy Fire Dashboard",
-    page_icon="assets/icon.png",
-    layout="centered"
+    page_icon=_icon,
+    layout="centered",
 )
+
 
 st.title("🔥 Healthy Fire MVP")
 st.caption("Ambition is like fire - you want it to burn bright, not out. Check in to keep tabs on your Fuel vs. Drain over time.")
