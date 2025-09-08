@@ -95,7 +95,7 @@ def quick_tip(row) -> str:
 
 from PIL import Image
 
-ICON_PATH = "assets/icon.png"
+ICON_PATH = "assets/icon_v2.png"
 try:
     _icon = Image.open(ICON_PATH)
 except Exception:
